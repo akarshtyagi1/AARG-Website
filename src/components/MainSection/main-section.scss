@@ -192,7 +192,7 @@ $light-grey: #F5F5F5;
 
         .solution-main {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             height: 100%;
             width: var(--section-width);
             margin: auto;
@@ -222,7 +222,6 @@ $light-grey: #F5F5F5;
                 display: grid;
                 gap: 30px;
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                ;
                 padding: 50px;
 
                 .solution-feature {
@@ -246,6 +245,27 @@ $light-grey: #F5F5F5;
                         margin-top: 10px;
                     }
                 }
+            }
+
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+
+                .solution-left, .solution-right {
+                    padding: 20px;
+                }
+
+                .warehouse-workers {
+                    display: none;
+                }
+
+                .solution-right {
+                    grid-template-columns: 1fr;
+                    gap: 20px;
+                    .solution-feature {
+                        height: 300px;
+                    }
+                }
+                
             }
         }
 
