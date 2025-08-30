@@ -16,16 +16,20 @@ code {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
 }
 
 html{
   font-size: 16px;
-  font-family: "proxima-nova", Helvetica, Arial, sans-serif;
 }
 
 @font-face {
   font-family: "proxima-nova";
-  src: url('../public/assets/fonts/Fontspring-DEMO-proximanova-light.otf') format('opentype');
+  src: url('../public/assets/fonts/Fontspring-DEMO-proximanova-light.otf') format('opentype'),
+        url('../public/assets/fonts/Fontspring-DEMO-proximanova-extrabold.otf') format('opentype'),
+        url('../public/assets/fonts/Fontspring-DEMO-proximanova-regular.otf') format('opentype'),
+        url('../public/assets/fonts/Fontspring-DEMO-proximanova-semibold.otf') format('opentype'),
+        url('../public/assets/fonts/Fontspring-DEMO-proximanova-bold.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
