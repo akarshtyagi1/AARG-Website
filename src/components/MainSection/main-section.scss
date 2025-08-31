@@ -314,7 +314,7 @@ $light-grey: #F5F5F5;
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            margin-bottom: 150px;
+            margin-bottom: 220px;
 
             .partner-logo {
                 cursor: pointer;
@@ -361,6 +361,7 @@ $light-grey: #F5F5F5;
                     h2 {
                         font-size: 2rem;
                         font-weight: bolder;
+                        line-height: 110%;
                     }
 
                     p {
@@ -410,8 +411,9 @@ $light-grey: #F5F5F5;
                 .floating-box {
                     flex-direction: column;
                     text-align: center;
-                    top: -300px;
+                    top: -350px;
                     width: 95%;
+                    padding: 20px;
 
                     & div {
                         margin-bottom: 20px;
@@ -420,7 +422,7 @@ $light-grey: #F5F5F5;
 
                 .contact-info {
                     text-align: center;
-                    margin-top: 150px;
+                    margin-top: 130px;
                 }
             }
 
