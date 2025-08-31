@@ -1,16 +1,19 @@
 import { FaLinkedin, FaInstagram, FaPhone } from "react-icons/fa";
 import "./header.scss";
-import { FaChevronDown } from "react-icons/fa6";
+import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const header = () => {
+const Header = () => {
     function scrollToWorkSection(sectionId) {
         const section = document.getElementById(sectionId);
         const offset = 150; // header height
         const top = section.getBoundingClientRect().top + window.scrollY - offset;
-
+        setOpenDrop(false);
         window.scrollTo({ top, behavior: "smooth" });
     }
+
+    const [openDrop, setOpenDrop] = useState(false);
+
     return (
         <>
             <div className="header">
@@ -34,22 +37,29 @@ const header = () => {
                         </div>
                         <div className="header-right">
                             <nav>
-                                <a onClick={() => scrollToWorkSection('product')}>Products <FaChevronDown /></a>
+                                <a onClick={() => scrollToWorkSection('product')}>Products</a>
+                                <a onClick={() => scrollToWorkSection('solution')}>Solutions</a>
                                 <a onClick={() => scrollToWorkSection('work')}>About</a>
-                                <a onClick={() => scrollToWorkSection('solution')}>Services</a>
                                 <a onClick={() => scrollToWorkSection('contact')}>Contact</a>
                             </nav>
-                            <button>Get Quote</button>
                         </div>
                         <div className="hamburger-menu">
-                            <GiHamburgerMenu style={{ fill: 'white' }} />
+                            <button>Get Quote</button>
+                            <GiHamburgerMenu className="icon" onClick={()=>setOpenDrop(!openDrop)} style={{ fill: 'white', verticalAlign: 'middle' }} />
                         </div>
                     </div>
                 </div>
-
+                <div className={"menu-drop " + (openDrop ? 'open' : '')}>
+                    <div className="menu-drop-container">
+                        <a onClick={() => scrollToWorkSection('product')}>Products</a>
+                        <a onClick={() => scrollToWorkSection('solution')}>Solutions</a>
+                        <a onClick={() => scrollToWorkSection('work')}>About</a>
+                        <a onClick={() => scrollToWorkSection('contact')}>Contact</a>
+                    </div>
+                </div>
             </div>
         </>
     );
 }
 
-export default header;
+export default Header;
