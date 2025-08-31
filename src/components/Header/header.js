@@ -4,6 +4,13 @@ import { FaChevronDown } from "react-icons/fa6";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 const header = () => {
+    function scrollToWorkSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        const offset = 150; // header height
+        const top = section.getBoundingClientRect().top + window.scrollY - offset;
+
+        window.scrollTo({ top, behavior: "smooth" });
+    }
     return (
         <>
             <div className="header">
@@ -27,10 +34,10 @@ const header = () => {
                         </div>
                         <div className="header-right">
                             <nav>
-                                <a href="#home">Products <FaChevronDown /></a>
-                                <a href="#about">About</a>
-                                <a href="#services">Services</a>
-                                <a href="#contact">Contact</a>
+                                <a onClick={() => scrollToWorkSection('product')}>Products <FaChevronDown /></a>
+                                <a onClick={() => scrollToWorkSection('work')}>About</a>
+                                <a onClick={() => scrollToWorkSection('solution')}>Services</a>
+                                <a onClick={() => scrollToWorkSection('contact')}>Contact</a>
                             </nav>
                             <button>Get Quote</button>
                         </div>
