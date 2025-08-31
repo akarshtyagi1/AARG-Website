@@ -3,7 +3,7 @@ import "./header.scss";
 import { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 
-const Header = () => {
+const Header = ({setShowGetQuote}) => {
     function scrollToWorkSection(sectionId) {
         const section = document.getElementById(sectionId);
         const offset = 150; // header height
@@ -42,9 +42,10 @@ const Header = () => {
                                 <a onClick={() => scrollToWorkSection('work')}>About</a>
                                 <a onClick={() => scrollToWorkSection('contact')}>Contact</a>
                             </nav>
+                            <button onClick={() => setShowGetQuote(true)}>Get Quote</button>
                         </div>
                         <div className="hamburger-menu">
-                            <button>Get Quote</button>
+                            <button onClick={() => setShowGetQuote(true)}>Get Quote</button>
                             <GiHamburgerMenu className="icon" onClick={()=>setOpenDrop(!openDrop)} style={{ fill: 'white', verticalAlign: 'middle' }} />
                         </div>
                     </div>

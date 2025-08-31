@@ -10,7 +10,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { CiMail } from "react-icons/ci";
 
 
-const MainSection = () => {
+const MainSection = ({setShowGetQuote}) => {
 
     function scrollToWorkSection(sectionId) {
         const section = document.getElementById(sectionId);
@@ -151,7 +151,7 @@ const MainSection = () => {
                                 <p>Contact us today for a free consultation and quote</p>
                             </div>
                             <div>
-                                <button className='contact-button'>Contact Us</button>
+                                <button onClick={() => setShowGetQuote(true)} className='contact-button'>Contact Us</button>
                                 <p>or call 98703 10987</p>
                             </div>
                         </div>
