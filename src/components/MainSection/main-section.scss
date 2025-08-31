@@ -354,6 +354,7 @@ $light-grey: #F5F5F5;
                 left: 50%;
                 transform: translateX(-50%);
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: space-between;
 
                 & div:nth-child(1) {
@@ -401,6 +402,25 @@ $light-grey: #F5F5F5;
                     margin-top: 20px;
                     font-size: 1.2rem;
                     line-height: 140%;
+                }
+            }
+
+
+             @media (max-width: 1180px) {
+                .floating-box {
+                    flex-direction: column;
+                    text-align: center;
+                    top: -300px;
+                    width: 95%;
+
+                    & div {
+                        margin-bottom: 20px;
+                    }
+                }
+
+                .contact-info {
+                    text-align: center;
+                    margin-top: 150px;
                 }
             }
 
